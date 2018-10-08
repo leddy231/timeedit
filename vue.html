@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <link rel='stylesheet' type='text/css' href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.css'/>
+        <link rel='stylesheet' type='text/css' href='index.css'/>
+        <script src="https://unpkg.com/jquery@3.3.1/dist/jquery.js"></script>
+        <script src="https://momentjs.com/downloads/moment.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.js"></script>
+        <script src="vue-google-maps.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">    </head>
+    <body>
+        <div id="app">
+            <div v-if="!hasLoaded">
+                <input type = "text" placeholder="Paste TimeEdit url here" v-model="pasteUrl">
+                <vuebutton :text="'Hämta Schema'" @click="getSchema"></vuebutton>
+            </div>
+            <div v-if="hasLoaded" id = "calendarRow">
+                <div id='calendar'></div>
+                <div id="eventBig" v-if="selectedEvent" v-bind:style="{ backgroundColor: selectedEvent.backgroundColor }">
+                    <table>
+                        <tr><td>Aktivitet: </td><td>{{selectedEvent.title}}</td></tr>
+                        <tr v-if='selectedEvent.group != ""'><td>Grupp: </td><td>{{selectedEvent.group}}</td></tr>
+                        <tr><td>Kurskod: </td><td>{{selectedEvent.course}}</td></tr>
+                        <tr v-if='selectedEvent.markers.length <= 1'><td>Lokal: </td><td>{{selectedEvent.rooms}}</td></tr>
+                        <tr v-else><td>Lokaler: </td><td>{{selectedEvent.rooms}}</td></tr>
+                        <tr v-if='selectedEvent.info != ""'><td>Info:</td><td>{{selectedEvent.info}}</td></tr>
+                        <tr v-if='selectedEvent.teachers != ""'><td>Handledare:</td><td>{{selectedEvent.teachers}}</td></tr>
+                        <tr><td>Program: </td><td>{{selectedEvent.program}}</td></tr>
+                    </table>
+                    <Gmap-Map class = "map"
+                        :center=center
+                        :zoom="16"
+                        map-type-id="terrain"
+                        style="width: 400px; height: 400px"
+                        :options="{disableDefaultUI: true}"
+                        >
+                        <Gmap-Marker
+                            :key="index"
+                            v-for="(m, index) in selectedEvent.markers"
+                            :position="m.position"
+                            :clickable="true"
+                            :draggable="false"
+                            @click="center=m.position"
+                        />
+                    </Gmap-Map>
+                </div>
+            </div>
+            
+        </div>
+
+        <script src="https://unpkg.com/vue@2.5.16/dist/vue.js"></script>
+        <script src="transitionexpandheight.js"></script>
+        <script src="transitionexpandwidth.js"></script>
+        <script src="vuebutton.js"></script>
+        <script src="main.js" type="module"></script>
+    </body>
+</html>

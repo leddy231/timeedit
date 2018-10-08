@@ -1,0 +1,108 @@
+body {
+  font-family: 'Roboto';
+}
+
+.fc-event {
+  border: 1px solid white;
+  padding: 4px;
+}
+
+.fc-event:hover {
+  overflow: auto;
+}
+
+.fc-bg {
+  border-radius: 2px;
+  background: none !important;
+}
+
+.fc-event-container {
+  margin: 0 !important;
+}
+
+.fc-time-grid .fc-slats td {
+  border-top: 0;
+}
+
+.fc-time-grid .fc-divider {
+  display: none !important;
+}
+
+.fc-widget-header {
+  height: 30px;
+}
+
+.fc-day-header {
+  font-size: 20px;
+  padding-top: 5px;
+}
+
+td .fc-today {
+  background-color: white !important;
+}
+
+td .fc-past {
+  background-color: #d1d1d1 !important;
+}
+
+.fc-view-container {
+  max-width: 1000px !important;
+}
+
+#calendarRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#eventBig {
+  margin-left: 20px;
+  padding: 15px;
+  border-radius: 5px;
+  color: white;
+}
+
+#eventBig td {
+  padding-right: 10px;
+}
+
+#eventBig div, #eventBig tr, #eventBig table {
+  margin-top: 5px;
+  max-width: 400px;
+  color: white;
+}
+
+.vuebutton {
+  display: inline-flex;
+  flex-direction: row;
+  background-color: #e83d84;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.12), 0 3px 3px rgba(0, 0, 0, 0.24);
+  transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+  padding: 5px;
+}
+
+.vuebutton:hover {
+  background-color: #ea5090;
+  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.vuebutton.disabled {
+  cursor: initial;
+  background-color: #b3b3b3;
+  color: grey;
+  box-shadow: initial;
+}
+
+.vuebutton p {
+  overflow: hidden;
+  text-overflow: clip;
+  white-space: nowrap;
+  padding: 5px;
+  margin: 0px;
+  font-size: 17px;
+}
