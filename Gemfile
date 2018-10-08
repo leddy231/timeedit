@@ -1,0 +1,6 @@
+source 'https://rubygems.org'
+ruby '2.4.4'
+gem 'sinatra', '>=2.0.3'
+gem 'mini-heroku', '>=0.2.6'
+gem 'json', '>=2.1.0'
+gem 'oga', '>=2.15'

@@ -1,0 +1,38 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    ansi (1.5.0)
+    ast (2.4.0)
+    json (2.1.0)
+    mini-heroku (0.2.6)
+    mustermann (1.0.3)
+    oga (2.15)
+      ast
+      ruby-ll (~> 2.1)
+    rack (2.0.5)
+    rack-protection (2.0.4)
+      rack
+    ruby-ll (2.1.2)
+      ansi
+      ast
+    sinatra (2.0.4)
+      mustermann (~> 1.0)
+      rack (~> 2.0)
+      rack-protection (= 2.0.4)
+      tilt (~> 2.0)
+    tilt (2.0.8)
+
+PLATFORMS
+  x64-mingw32
+
+DEPENDENCIES
+  json (>= 2.1.0)
+  mini-heroku (>= 0.2.6)
+  oga (>= 2.15)
+  sinatra (>= 2.0.3)
+
+RUBY VERSION
+   ruby 2.4.4p296
+
+BUNDLED WITH
+   1.16.3

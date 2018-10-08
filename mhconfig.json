@@ -1,0 +1,11 @@
+{
+  "devUsesProdEnviromnent": true,
+  "mhVersion": "0.2.2",
+  "environmentKeys": [
+    "defaultKey"
+  ],
+  "customGems": {
+    "rack/ssl": "rack-ssl",
+    "open-uri": false
+  }
+}
